@@ -10,7 +10,7 @@ def login():
     while kode_login != 2:
         global role
         kode_login = 0
-        for i in range(1,3):
+        for i in range(103):
             if inuser == user[i][0] and inpasw == user[i][1] :
                 kode_login = 2
                 role = user[i][2]
@@ -25,6 +25,8 @@ def login():
             
             inuser = str(input("username :"))
             inpasw = str(input("password :"))
-    print(f"\nSelamat datang {inuser}!!")   
+    print(f"\nSelamat datang {inuser}!!")      
+    
+
 login()
 print(role)

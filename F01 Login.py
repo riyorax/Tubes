@@ -1,4 +1,5 @@
 user = [["username","password","role"],["wafi","ganteng","manusia"],["ifrit","neraka","jin"]]
+role = ""
 def login():
     inuser = str(input("username :"))
     inpasw = str(input("password :"))
@@ -22,5 +23,5 @@ def login():
             inpasw = str(input("password :"))
     print(f"\nSelamat datang {inuser}!!")
     return peran       
-        
-print(login())
+role = login()
+print(role)

@@ -1,11 +1,10 @@
-import F01_Login
-global role
+import F01
 def logout():
-    global role
-    if role == "" :
+    global F01.role
+    if F01.role == "" :
         print("Tidak bisa logout karena belum login")
     else :
-        role = ""
+        F01.role = ""
         print("keluar dari akun...")
 
 logout()

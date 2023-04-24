@@ -1,15 +1,19 @@
-user = [["username","password","role"],["wafi","ganteng","manusia"],["ifrit","neraka","jin"]]
+import tools
+
+user = ["-" for i in range(103)]
+tools.csv_array_user("user.csv",user)
 role = ""
 def login():
     inuser = str(input("username :"))
     inpasw = str(input("password :"))
     kode_login = 0
     while kode_login != 2:
+        global role
         kode_login = 0
         for i in range(1,3):
             if inuser == user[i][0] and inpasw == user[i][1] :
                 kode_login = 2
-                peran = user[i][2]
+                role = user[i][2]
             elif inuser == user[i][0] and inpasw != user [i][1]:
                 kode_login = 1
 
@@ -21,7 +25,6 @@ def login():
             
             inuser = str(input("username :"))
             inpasw = str(input("password :"))
-    print(f"\nSelamat datang {inuser}!!")
-    return peran       
-role = login()
+    print(f"\nSelamat datang {inuser}!!")   
+login()
 print(role)

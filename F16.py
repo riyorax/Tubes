@@ -9,5 +9,3 @@ def exit():
             print("tidak save")
             flag_exit = True
     print("Terima kasih dan sampai jumpa kembali... :)")
-
-exit()

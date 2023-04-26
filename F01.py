@@ -30,7 +30,4 @@ def login():
                 inuser = str(input("username :"))
                 inpasw = str(input("password :"))
         print(f"\nSelamat datang {inuser}!!")      
-    
-
-login()
-print(role)
+   

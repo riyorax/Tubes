@@ -82,7 +82,7 @@ def Batch_Bangun(arr_user,arr_bahan_bangunan,arr_candi):
             count_candi = 0
             i = 0
             while True:
-                if user[i] != "-":
+                if arr_user[i] != "-":
                     count_candi += 1
                 else:
                     break

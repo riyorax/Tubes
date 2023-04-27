@@ -1,6 +1,6 @@
 import list_data as data
 
-role = 'bandung_bondowoso' # ini buat testcase, di main branch ini dihapus supaya sesuai pas di program utama
+role = 'bandung_bondowoso' ### ini buat testcase, di main branch ini dihapus supaya sesuai pas di program utama
 
 def summon_jin():
     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
@@ -61,3 +61,4 @@ def summon_jin():
             data.users[data.N_user] = [username_jin, password_jin, jenis_jin]
         
 summon_jin()
+data.cetak(data.users) ### ini juga buat testcase buat liat array statis di file utama, di main branch bakal dihapus

@@ -11,7 +11,7 @@ def summon_jin():
         print("Anda tidak memiliki wewenang untuk summon jin!")
         return 0
     else:
-        print(">>> summonjin")
+        print(">>> summonjin") ### buat test case
         print("Jenis jin yang dapat dipanggil:")
         print("(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
         print("(2) Pembangun - Bertugas membangun candi")
@@ -62,3 +62,5 @@ def summon_jin():
         
 summon_jin()
 data.cetak(data.users) ### ini juga buat testcase buat liat array statis di file utama, di main branch bakal dihapus
+
+### artinya hanya buat test case dan akan dihapus di main branch agar program berjalan sesuai spesifikasi

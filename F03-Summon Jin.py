@@ -1,7 +1,5 @@
 import list_data as data
 
-role = 'bandung_bondowoso'
-
 def summon_jin():
     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
     fungsi mengambil input username, password, dan jenis jin."""
@@ -11,7 +9,6 @@ def summon_jin():
         print("Anda tidak memiliki wewenang untuk summon jin!")
         return 0
     else:
-        print(">>> summonjin")
         print("Jenis jin yang dapat dipanggil:")
         print("(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
         print("(2) Pembangun - Bertugas membangun candi")

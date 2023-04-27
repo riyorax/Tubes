@@ -1,12 +1,8 @@
 import list_data as data
 
-role = 'bandung_bondowoso'
-
 def hilangkan_jin():
     """Bandung Bondowoso memiliki wewenang untuk menghapus jin.
     Fungsi menghapus jin dan candi yang dibuat oleh jin tersebut juga ikut terhapus."""
-
-    print(">>> hapusjin")
 
     global role
     if (not(role =='bandung_bondowoso')):
@@ -46,6 +42,3 @@ def hilangkan_jin():
                 i += 1
 
 hilangkan_jin()
-
-# Buat cek list data (Hapus aja kalo udah ngecek)
-# data.cetak(data.users)

@@ -1,13 +1,4 @@
-import tools
-
-user = ["-" for i in range(103)]
-tools.csv_array_user("user.csv",user)
-bahan_bangunan = ["-" for i in range(4)]
-tools.csv_array_bahan_bangunan("bahan_bangunan.csv",bahan_bangunan)
-candi = ["-" for i in range(101)]
-tools.csv_array_candi("candi.csv",candi)
-
-def ambil_laporan_jin(arr_user,arr_candi):
+def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
     count_jin = 0
     i = 0
     while True:
@@ -41,6 +32,9 @@ def ambil_laporan_jin(arr_user,arr_candi):
     if count_jin_pembangun == 0:
         print("> Jin Terajin: -")
         print("> Jin Termalas: -")
+        print(f"> Jumlah Pasir: {arr_bahan_bangunan[1][2]} unit")
+        print(f"> Jumlah Air: {arr_bahan_bangunan[2][2]} unit")
+        print(f"> Jumlah Batu: {arr_bahan_bangunan[3][2]} unit")
     else:
         arr_jin_jmlhcandi = ["-" for i in range(count_jin_pembangun)]
         idx_jin = 0
@@ -71,16 +65,21 @@ def ambil_laporan_jin(arr_user,arr_candi):
         min_pembuat = arr_jin_jmlhcandi[0][0]
         for i in range(count_jin_pembangun):
             if arr_jin_jmlhcandi[i][1] > max_jmlh:
+                max_jmlh = arr_jin_jmlhcandi[i][1]
+                max_pembuat = arr_jin_jmlhcandi[i][0]
+            if arr_jin_jmlhcandi[i][1] == max_jmlh:
                 if arr_jin_jmlhcandi[i][0] < max_pembuat:
                     max_jmlh = arr_jin_jmlhcandi[i][1]
                     max_pembuat = arr_jin_jmlhcandi[i][0]
             if arr_jin_jmlhcandi[i][1] < min_jmlh:
+                min_jmlh = arr_jin_jmlhcandi[i][1]
+                min_pembuat = arr_jin_jmlhcandi[i][0]
+            if arr_jin_jmlhcandi[i][1] == min_jmlh:
                 if arr_jin_jmlhcandi[i][0] > min_pembuat:
                     min_jmlh = arr_jin_jmlhcandi[i][1]
                     min_pembuat = arr_jin_jmlhcandi[i][0]
-        print(max_pembuat)
-        print(min_pembuat)
-        
-print(user)
-print(candi)
-ambil_laporan_jin(user,candi)
+        print("> Jin Terajin:",max_pembuat)
+        print("> Jin Termalas:",min_pembuat)
+        print(f"> Jumlah Pasir: {arr_bahan_bangunan[1][2]} unit")
+        print(f"> Jumlah Air: {arr_bahan_bangunan[2][2]} unit")
+        print(f"> Jumlah Batu: {arr_bahan_bangunan[3][2]} unit")

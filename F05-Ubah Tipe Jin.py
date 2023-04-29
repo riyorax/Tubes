@@ -1,10 +1,9 @@
 import list_data as data
 
-def ubah_tipe_jin():
+def ubah_tipe_jin(role):
     """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.
     Fungsi mengubah tipe jin yang sudah di summon"""
 
-    global role
     if (not(role =='bandung_bondowoso')):
         print("Anda tidak memiliki wewenang untuk mengubah tipe jin!")
         return 0

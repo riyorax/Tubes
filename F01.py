@@ -25,3 +25,4 @@ def login(arr_user,role):
                 inuser = str(input("username :"))
                 inpasw = str(input("password :"))
         print(f"\nSelamat datang {inuser}!!")
+        return role

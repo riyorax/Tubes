@@ -1,10 +1,9 @@
 import list_data as data
 
-def summon_jin():
+def summon_jin(role):
     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
     fungsi mengambil input username, password, dan jenis jin."""
 
-    global role
     if (not(role =='bandung_bondowoso')):
         print("Anda tidak memiliki wewenang untuk summon jin!")
         return 0

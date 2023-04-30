@@ -1,5 +1,6 @@
 import list_data as data
 from list_data import *
+
 def summonjin():
     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
     fungsi mengambil input username, password, dan jenis jin."""
@@ -55,5 +56,3 @@ def summonjin():
             # Memasukkan input jin baru ke dalam array user csv
             data.N_user += 1
             data.users[data.N_user] = [username_jin, password_jin, jenis_jin]
-        
-summon_jin()

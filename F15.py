@@ -1,6 +1,7 @@
-
-def help (user) :
-    if user == [] :
+from list_data import *
+def help () :
+    global user
+    if user == "" :
         print ('1. login',"\nUntuk masuk menggunakan akun")
         print ('2. exit',"\nUntuk keluar dari program dan kembali ke terminal")
         print ("3. save","\n menyimpan data yang berada di program sesuai dengan struktur data eksternal.")
@@ -27,6 +28,3 @@ def help (user) :
         print ('1. logout',"\nUntuk keluar dari akun yang digunakan sekarang  ")
         print ('2. bangun','\nuntuk membangun candi')
         print ("3. save","\n menyimpan data yang berada di program sesuai dengan struktur data eksternal.")
-     
-help()
-

@@ -1,13 +1,16 @@
-def hitung (arr_candi):
+from list_data import *
+def hitung ():
+    global candi
     count_candi = 0 
     i = 0
     while True :
-        if arr_candi[i] != "-" :
+        if candi[i] != "-" :
             count_candi += 1 
             i += 1
         else :
             return count_candi
-def laporancandi(arr_candi):
+def laporancandi():
+    global candi
     if hitung == 0 :
         print("Total Candi: 0")
         print("Total Pasir yang digunakan: 0")
@@ -27,7 +30,7 @@ def laporancandi(arr_candi):
         id_termurah = 0
         i=1
         while True:
-            if arr_candi [i] == "-":
+            if candi [i] == "-":
                 print("Total Pasir yang digunakan:",jumlah_pasir)
                 print("Total batu yang digunakan:",jumlah_batu)
                 print("Total air yang digunakan:",jumlah_air)
@@ -35,14 +38,14 @@ def laporancandi(arr_candi):
                 print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
                 break
             else : 
-                jumlah_pasir += arr_candi[i][2]
-                jumlah_batu += arr_candi[i][3]
-                jumlah_air += arr_candi[i][4]
+                jumlah_pasir += candi[i][2]
+                jumlah_batu += candi[i][3]
+                jumlah_air += candi[i][4]
 
-            if termahal < (arr_candi [i][2] * 10000 + arr_candi[i][3] * 15000 + arr_candi[i][4] * 7500 ):
-                termahal = (arr_candi [i][2] * 10000 + arr_candi[i][3] * 15000 + arr_candi[i][4] * 7500 )
-                id_termahal = arr_candi[i][0]
+            if termahal < (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 ):
+                termahal = (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 )
+                id_termahal = candi[i][0]
             
-            if termurah > (arr_candi [i][2] * 10000 + arr_candi[i][3] * 15000 + arr_candi[i][4] * 7500 ):
-                termurah = (arr_candi [i][2] * 10000 + arr_candi[i][3] * 15000 + arr_candi[i][4] * 7500 )
-                id_termurah = arr_candi [i][0]
+            if termurah > (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 ):
+                termurah = (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 )
+                id_termurah = candi [i][0]

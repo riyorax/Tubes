@@ -1,9 +1,12 @@
-def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
+import tools
+from list_data import *
+
+def laporanjin():
     count_jin = 0
     i = 0
     while True:
-        if arr_user[i] != "-":
-            if arr_user[i][2] == "jin_pengumpul" or arr_user[i][2] == "jin_pembangun":
+        if user[i] != "-":
+            if user[i][2] == "jin_pengumpul" or user[i][2] == "jin_pembangun":
                 count_jin += 1
         else:
             break
@@ -12,8 +15,8 @@ def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
     count_jin_pengumpul = 0
     i = 0
     while True:
-        if arr_user[i] != "-":
-            if arr_user[i][2] == "jin_pengumpul":
+        if user[i] != "-":
+            if user[i][2] == "jin_pengumpul":
                 count_jin_pengumpul += 1
         else:
             break
@@ -22,8 +25,8 @@ def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
     count_jin_pembangun = 0
     i = 0
     while True:
-        if arr_user[i] != "-":
-            if arr_user[i][2] == "jin_pembangun":
+        if user[i] != "-":
+            if user[i][2] == "jin_pembangun":
                 count_jin_pembangun += 1
         else:
             break
@@ -32,17 +35,17 @@ def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
     if count_jin_pembangun == 0:
         print("> Jin Terajin: -")
         print("> Jin Termalas: -")
-        print(f"> Jumlah Pasir: {arr_bahan_bangunan[1][2]} unit")
-        print(f"> Jumlah Air: {arr_bahan_bangunan[2][2]} unit")
-        print(f"> Jumlah Batu: {arr_bahan_bangunan[3][2]} unit")
+        print(f"> Jumlah Pasir: {bahan_bangunan[1][2]} unit")
+        print(f"> Jumlah Air: {bahan_bangunan[2][2]} unit")
+        print(f"> Jumlah Batu: {bahan_bangunan[3][2]} unit")
     else:
         arr_jin_jmlhcandi = ["-" for i in range(count_jin_pembangun)]
         idx_jin = 0
         i = 0
         while idx_jin<count_jin_pembangun:
-            if arr_user[i] != "-":
-                if arr_user[i][2] == "jin_pembangun":
-                    arr_jin_jmlhcandi[idx_jin] = [arr_user[i][0],0]
+            if user[i] != "-":
+                if user[i][2] == "jin_pembangun":
+                    arr_jin_jmlhcandi[idx_jin] = [user[i][0],0]
                     idx_jin += 1
             else:
                 break
@@ -52,8 +55,8 @@ def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
             pembuat = arr_jin_jmlhcandi[x][0]
             count_jmlh_candi = 0
             while True:
-                if arr_candi[j] != "-":
-                    if arr_candi[j][1] == pembuat:
+                if candi[j] != "-":
+                    if candi[j][1] == pembuat:
                         count_jmlh_candi += 1
                 else:
                     break
@@ -80,6 +83,6 @@ def ambil_laporan_jin(arr_user,arr_candi,arr_bahan_bangunan):
                     min_pembuat = arr_jin_jmlhcandi[i][0]
         print("> Jin Terajin:",max_pembuat)
         print("> Jin Termalas:",min_pembuat)
-        print(f"> Jumlah Pasir: {arr_bahan_bangunan[1][2]} unit")
-        print(f"> Jumlah Air: {arr_bahan_bangunan[2][2]} unit")
-        print(f"> Jumlah Batu: {arr_bahan_bangunan[3][2]} unit")
+        print(f"> Jumlah Pasir: {bahan_bangunan[1][2]} unit")
+        print(f"> Jumlah Air: {bahan_bangunan[2][2]} unit")
+        print(f"> Jumlah Batu: {bahan_bangunan[3][2]} unit")

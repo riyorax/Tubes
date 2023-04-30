@@ -1,6 +1,8 @@
-import tools
+from list_data import *
 
-def login(arr_user,role,username):
+def login():
+    global username
+    global role
     if role != "" :
         print("Status anda dalam keadaan login, silahkan logout terlebih dahulu!!")
     else:
@@ -11,11 +13,11 @@ def login(arr_user,role,username):
         while kode_login != 2:
             kode_login = 0
             for i in range(103):
-                if inuser == arr_user[i][0] and inpasw == arr_user[i][1] :
+                if inuser == user[i][0] and inpasw == user[i][1] :
                     kode_login = 2
-                    role = arr_user[i][2]
+                    role = user[i][2]
                     username = [i][0]
-                elif inuser == arr_user[i][0] and inpasw != arr_user [i][1]:
+                elif inuser == user[i][0] and inpasw != user [i][1]:
                     kode_login = 1
 
             if kode_login != 2:
@@ -26,4 +28,3 @@ def login(arr_user,role,username):
                 inuser = str(input("username :"))
                 inpasw = str(input("password :"))
         print(f"\nSelamat datang {inuser}!!")
-        return role, username

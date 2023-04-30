@@ -4,7 +4,7 @@ import tools
 import F07
 import F06
 
-user = ["*" for i in range(103)]
+role = ["*" for i in range(103)]
 bahan_bangunan = [['pasir', 'sand', '0'], ['batu', 'stone', '0'], ['air', 'water', '0']]
 candi = ["*" for i in range(101)]
 

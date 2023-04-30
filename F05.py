@@ -1,9 +1,9 @@
 import list_data as data
 
-def ubahjin(role):
+def ubahjin():
     """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.
     Fungsi mengubah tipe jin yang sudah di summon"""
-
+    global role
     if (not(role =='bandung_bondowoso')):
         print("Anda tidak memiliki wewenang untuk mengubah tipe jin!")
         return 0
@@ -38,5 +38,3 @@ def ubahjin(role):
                 break
             else:
                 i += 1
-
-ubah_tipe_jin()

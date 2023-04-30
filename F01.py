@@ -13,11 +13,11 @@ def login():
         while kode_login != 2:
             kode_login = 0
             for i in range(103):
-                if inuser == user[i][0] and inpasw == user[i][1] :
+                if inuser == role[i][0] and inpasw == role[i][1] :
                     kode_login = 2
-                    role = user[i][2]
+                    role = role[i][2]
                     username = [i][0]
-                elif inuser == user[i][0] and inpasw != user [i][1]:
+                elif inuser == role[i][0] and inpasw != role [i][1]:
                     kode_login = 1
 
             if kode_login != 2:

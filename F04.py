@@ -1,4 +1,4 @@
-import list_data as data
+# import list_data as data
 
 def hapusjin():
     """Bandung Bondowoso memiliki wewenang untuk menghapus jin.

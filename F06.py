@@ -1,8 +1,12 @@
 import random
 import tools
-from list_data import *
+# from list_data import *
 
 def bangun():
+    global role
+    global bahan_bangunan
+    global username
+    global candi
     if role == "jin_pembangun":
         pasir = random.randint(1,5)
         batu = random.randint(1,5)

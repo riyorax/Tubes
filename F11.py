@@ -1,4 +1,4 @@
-from list_data import *
+# from list_data import *
 def hancurkancandi():
     global candi
     id = int(input("Masukkan ID candi: "))

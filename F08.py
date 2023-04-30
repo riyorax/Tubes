@@ -1,8 +1,11 @@
 import tools
 import random
-from list_data import *
+# from list_data import *
 
 def batchkumpul():
+    global role
+    global bahan_bangunan
+    global candi
     if role == "bandung_bondowoso":
         count = 0
         i = 0

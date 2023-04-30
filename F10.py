@@ -1,4 +1,4 @@
-from list_data import *
+# from list_data import *
 def hitung_candi ():
     global candi
     count_candi = 0 

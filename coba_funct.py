@@ -1,7 +1,5 @@
-import tools
-from list_data import *
 import F06
+from list_data import *
+F06.bangun()
 
-F06.bangun
-
-print(candi)
+# print(candi)

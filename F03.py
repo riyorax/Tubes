@@ -1,5 +1,5 @@
 import list_data as data
-from list_data import *
+# from list_data import *
 
 def summonjin():
     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 

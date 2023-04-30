@@ -1,7 +1,9 @@
 import random
-from list_data import *
+# from list_data import *
 
 def kumpul():
+      global bahan_bangunan
+      global role
       if role == "jin_pengumpul":
             pasir = random.randint(0,5)
             batu = random.randint(0,5)

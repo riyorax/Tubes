@@ -1,6 +1,6 @@
 import os
 import tools
-from list_data import *
+# from list_data import *
 
 def save():
     global role

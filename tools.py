@@ -2,9 +2,9 @@ import os
 import sys
 from F01 import *
 from F02 import *
-from F03 import *
-from F04 import *
-from F05 import *
+# from F03 import *
+# from F04 import *
+# from F05 import *
 from F06 import *
 from F07 import *
 from F08 import *
@@ -160,14 +160,14 @@ def run(fungsi):
         login()
     if fungsi == "logout":
         logout()
-    if fungsi == "summonjin":
-        summonjin()
+    # if fungsi == "summonjin":
+    #     summonjin()
     if fungsi == "bangun":
         bangun ()
     if fungsi == "kumpul":
         kumpul ()
-    if fungsi == "ubahjin":
-        ubahjin()
+    # if fungsi == "ubahjin":
+    #     ubahjin()
     if fungsi == "batchkumpul":
         batchkumpul ()
     if fungsi == "batchbangun":
@@ -178,8 +178,8 @@ def run(fungsi):
         save ()
     if fungsi == "ayamberkokok":
         ayamberkokok ()
-    if fungsi == "hapusjin":
-        hapusjin ()
+    # if fungsi == "hapusjin":
+    #     hapusjin ()
     if fungsi == "hancurkancandi":
         hancurkancandi ()
     if fungsi == "laporanjin":

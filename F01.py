@@ -1,6 +1,6 @@
 import tools
 
-def login(arr_user,role):
+def login(arr_user,role,username):
     if role != "" :
         print("Status anda dalam keadaan login, silahkan logout terlebih dahulu!!")
     else:
@@ -14,6 +14,7 @@ def login(arr_user,role):
                 if inuser == arr_user[i][0] and inpasw == arr_user[i][1] :
                     kode_login = 2
                     role = arr_user[i][2]
+                    username = [i][0]
                 elif inuser == arr_user[i][0] and inpasw != arr_user [i][1]:
                     kode_login = 1
 
@@ -25,4 +26,4 @@ def login(arr_user,role):
                 inuser = str(input("username :"))
                 inpasw = str(input("password :"))
         print(f"\nSelamat datang {inuser}!!")
-        return role
+        return role, username

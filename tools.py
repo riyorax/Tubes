@@ -71,6 +71,16 @@ def array_to_line_2(a,b,c,d,f):
     output += "\n"
     return output
 
+def write_csv_user(file,array):
+    count = 0
+    for i in range(103):
+        if array[i] != "-":
+            count+=1
+    f = open(file, 'w')
+    for i in range(count+1):
+        f.write(array_to_line_1(array[i][0],array[i][1],array[i][2]))
+    f.close()
+    
 def write_csv_bahan_bangunan(file,array):
     f = open(file, 'w')
     for i in range(4):

@@ -1,5 +1,5 @@
 from list_data import *
-def hitung ():
+def hitung_candi ():
     global candi
     count_candi = 0 
     i = 0
@@ -11,7 +11,7 @@ def hitung ():
             return count_candi
 def laporancandi():
     global candi
-    if hitung == 0 :
+    if hitung_candi == 0 :
         print("Total Candi: 0")
         print("Total Pasir yang digunakan: 0")
         print("Total Batu yang digunakan: 0")
@@ -19,7 +19,7 @@ def laporancandi():
         print("ID Candi Termahal: -")
         print("ID Candi Termurah: -")
     else :
-        print("Total Candi:",hitung)
+        print("Total Candi:",hitung_candi)
         
         jumlah_pasir = 0
         jumlah_air = 0

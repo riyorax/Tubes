@@ -1,6 +1,21 @@
 import os
 import sys
-
+from F01 import *
+from F02 import *
+from F03 import *
+from F04 import *
+from F05 import *
+from F06 import *
+from F07 import *
+from F08 import *
+from F09 import *
+from F10 import *
+from F11 import *
+from F12 import *
+# from F13 import *
+from F14 import *
+from F15 import *
+from F16 import *
 # FIKSS
 
 def seplit(string, x):
@@ -141,8 +156,6 @@ def write_csv_candi(file,array):
     f.close()
 
 def run(fungsi):
-    if fungsi == "debug":
-        debug()
     if fungsi == "login":
         login()
     if fungsi == "logout":
@@ -175,3 +188,14 @@ def run(fungsi):
         laporancandi ()
     if fungsi == "exit":
         exit()
+
+def hitung_candi ():
+    global candi
+    count_candi = 0 
+    i = 0
+    while True :
+        if candi[i] != "-" :
+            count_candi += 1 
+            i += 1
+        else :
+            return count_candi

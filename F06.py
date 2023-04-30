@@ -21,11 +21,11 @@ def bangun():
             bahan_bangunan[2][2] = str(b)
             bahan_bangunan[3][2] = str(c)
             id_candi = tools.id_candi(candi)
-            flag = False
-            for i in range(101):
-                if candi[i] == "-":
-                    flag = True
-            if flag:
+            count_candi = tools.hitung_candi
+            if count_candi<100:
                 tools.write_array_candi(candi,id_candi,username,pasir,batu,air)
+            print("Candi berhasil dibangun.")
+            print(f"Sisa candi yang perlu dibangun: {100-count_candi}")
+
     else:
         print("Maaf anda tidak memiliki akses untuk fungsi tersebut")

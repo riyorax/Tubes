@@ -25,7 +25,7 @@ def bangun():
             bahan_bangunan[2][2] = str(b)
             bahan_bangunan[3][2] = str(c)
             id_candi = tools.id_candi(candi)
-            count_candi = tools.hitung_candi
+            count_candi = tools.hitung_candi()
             if count_candi<100:
                 tools.write_array_candi(candi,id_candi,username,pasir,batu,air)
             print("Candi berhasil dibangun.")

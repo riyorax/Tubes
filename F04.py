@@ -13,22 +13,22 @@ def hapusjin():
         i = 0
 
         while i <= (data.N_user):
-            if data.users[i][0] == hapus_jin:
+            if data.user[i][0] == hapus_jin:
                 konfirmasi = input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
                 if konfirmasi == "Y" or konfirmasi == 'y':
                     # Hapus jin
                     for i in range(1, data.N_user+1):
-                        if data.users[i][0] == hapus_jin:
-                            data.users[i] = ['', '', '']
+                        if data.user[i][0] == hapus_jin:
+                            data.user[i] = "-"
                             for j in range(i, data.N_user):
-                                data.users[j] = data.users[j+1]
+                                data.user[j] = data.user[j+1]
                             break 
                     # Hapus candi jin
                     for i in range (data.N_candi):
-                        if data.users[i][1] == hapus_jin:
-                            data.users[i] = ['', '', '','','']
+                        if data.user[i][1] == hapus_jin:
+                            data.user[i] = "-"
                             for j in range(i, data.N_user):
-                                data.users[j] = data.users[j+1]
+                                data.user[j] = data.user[j+1]
                             break    
                     print("Jin telah berhasil dihapus dari alam gaib.")
                     break
@@ -39,6 +39,7 @@ def hapusjin():
                 break
             else:
                 i += 1
-                
-[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'd', '5', '4', '3'], ['2', 'u', '2', '1', '3'], ['3', 'n', '5', '2', '4'], ['4', 'g', '3', '4', '3'], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'd', '5', '4', '3'], ['2', 'u', '2', '1', '3'], ['3', 'n', '5', '2', '4'], ['4', 'g', '3', '4', '3'], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+
+# [[asep,asep,jin_..],[asep,asep,jin_..],[asep,asep,jin_..],"-",["-","-","-"],]
+# [[asep,asep,jin_..],[asep,asep,jin_..],[asep,asep,jin_..],"-","-","-","-"]
+# [['username', 'password', 'role'], ['Bondowoso', 'cintaroro', 'bandung_bondowoso'], ['Roro', 'gasukabondo', 'roro_jonggrang'], ['asep1', 'asepo123', 'jin_pembangun'], ['asep2', 'asepo123', 'jin_pembangun'], ['asep3', 'asepo123', 'jin_pembangun'], ['asep4', 'asepo123', 'jin_pembangun'], ['asep5', 'asepo123', 'jin_pengumpul'], ['asep6', 'asepo123', 'jin_pengumpul'], ['asep7', 'asepo123', 'jin_pengumpul'], ['asep8', 'asepo123', 'jin_pengumpul'], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']

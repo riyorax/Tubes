@@ -10,8 +10,8 @@ tools.csv_array_user("user.csv",user)
 tools.csv_array_bahan_bangunan("bahan_bangunan.csv",bahan_bangunan)
 tools.csv_array_candi("candi.csv",candi)
 
-N_user = 2
-N_candi = 0
+N_user = 10
+N_candi = 2
 
 def cetak(arr):
     for i in arr:

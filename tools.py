@@ -100,7 +100,7 @@ def write_csv_user(file,array):
 def write_csv_bahan_bangunan(file,array):
     f = open(file, 'w')
     for i in range(4):
-        f.write(array_to_line_1(array[i][0],array[i][1],array[i][2]))
+        f.write(array_to_line_1(array[i][1],array[i][2],array[i][3]))
     f.close()
 
 def id_candi(array):
@@ -155,3 +155,13 @@ def write_csv_candi(file,array):
     for i in range(count+1):
         f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
     f.close()
+
+[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'asep3', '1', '2', '1'], ['2', 'asep2', '2', '4', '1'], '-', '-', '-', '-',]
+[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'asep3', '1', '2', '1'], ['2', 'asep2', '2', '4', '1'],"-", ["","",""], ["","",""], '-',]
+1
+2
+3
+4
+5
+["","",""]
+"-"

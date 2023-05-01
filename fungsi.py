@@ -102,18 +102,48 @@ def logout():
 #             data.N_user += 1
 #             data.users[data.N_user] = [username_jin, password_jin, jenis_jin]
 
-# F04
-# def hapusjin():
-#     """Bandung Bondowoso memiliki wewenang untuk menghapus jin.
-#     Fungsi menghapus jin dan candi yang dibuat oleh jin tersebut juga ikut terhapus."""
-#     global role
-#     if (not(role =='bandung_bondowoso')):
-#         print("Anda tidak memiliki wewenang untuk menghapus jin!")
-#         return 0
-#     else:
-#         hapus_jin = input("Masukkan username jin : ")
+def hapusjin():
+    """Bandung Bondowoso memiliki wewenang untuk menghapus jin.
+    Fungsi menghapus jin dan candi yang dibuat oleh jin tersebut juga ikut terhapus."""
+    global role
+    global user
+    global N_user
+    global N_candi
+    if (not(role =='bandung_bondowoso')):
+        print("Anda tidak memiliki wewenang untuk menghapus jin!")
+        return 0
+    else:
+        hapus_jin = input("Masukkan username jin : ")
 
-#         i = 0
+        i = 0
+
+        while i <= (N_user):
+            if user[i][0] == hapus_jin:
+                konfirmasi = input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
+                if konfirmasi == "Y" or konfirmasi == 'y':
+                    # Hapus jin
+                    for i in range(1, N_user+1):
+                        if user[i][0] == hapus_jin:
+                            user[i] = "-"
+                            for j in range(i, N_user):
+                                user[j] = user[j+1]
+                            break 
+                    # Hapus candi jin
+                    for i in range (N_candi):
+                        if user[i][1] == hapus_jin:
+                            user[i] = "-"
+                            for j in range(i, N_user):
+                                user[j] = user[j+1]
+                            break    
+                    print("Jin telah berhasil dihapus dari alam gaib.")
+                    break
+                else: # Konfirmasi == "N" or "n"
+                    break
+            elif i == (N_user):
+                print("Tidak ada jin dengan username tersebut.")
+                break
+            else:
+                i += 1
 
 #         while i <= (data.N_user):
 #             if data.users[i][0] == hapus_jin:
@@ -350,6 +380,7 @@ def batchbangun():
                     air = arr_temp_bahan_bangunan[i][2]
                     id_candi = tools.id_candi(candi)
                     tools.write_array_candi(candi,id_candi,pembuat,pasir,batu,air)
+                print(f"Jin berhasil membangun total {repetition} candi.")
     else:
         print("Maaf anda tidak memiliki akses untuk fungsi tersebut")
 #F09
@@ -623,6 +654,8 @@ def cek():
     print(candi)
     print(username)
     print(role)
+    print(f"panjang arr_candi{hitung_candi()}")
+    
 
 def run(fungsi):
     if fungsi == "login":
@@ -647,8 +680,8 @@ def run(fungsi):
         save ()
     if fungsi == "ayamberkokok":
         ayamberkokok ()
-    # if fungsi == "hapusjin":
-    #     hapusjin ()
+    if fungsi == "hapusjin":
+        hapusjin ()
     if fungsi == "hancurkancandi":
         hancurkancandi ()
     if fungsi == "laporanjin":

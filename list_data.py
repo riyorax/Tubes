@@ -1,17 +1,23 @@
 import tools
 
-role = ""
-username = ""
-user = ["-" for i in range(103)] # Panjang array sebanyak 103 karena maximal jin adalah 100 dan terdapat 3 line bawaan untuk header, bondowoso dan roro
-bahan_bangunan = ["-" for i in range(4)] # Panjang array 4 untuk satu line untuk header dan 3 lagi untuk bahan bangunan
-candi = ["-" for i in range(101)] # Panjang array 101 karena maximal 100 candi dan satu line untuk header
+user = []
+N_user = 3
+N_candi = 0
 
-tools.csv_array_user("user.csv",user)
-tools.csv_array_bahan_bangunan("bahan_bangunan.csv",bahan_bangunan)
-tools.csv_array_candi("candi.csv",candi)
+def f_users(file_users):
+    users = [['', '', ''] for i in range(103)]
+    users = tools.csv_array_user(file_users, users)
+    return users
 
-N_user = 10
-N_candi = 2
+def f_candi(file_candi):
+    candi = [['', '', '', '', ''] for i in range(101)]
+    candi = tools.csv_array_candi(file_candi, candi)
+    return candi
+
+def f_bahan_bangunan(file_bahan_bangunan):
+    bahan_bangunan = [['', '', ''] for i in range(4)]
+    bahan_bangunan = tools.csv_array_bahan_bangunan(file_bahan_bangunan, bahan_bangunan)
+    return bahan_bangunan
 
 def cetak(arr):
     for i in arr:

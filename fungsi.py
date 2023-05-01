@@ -154,34 +154,6 @@ def hapusjin():
             else:
                 i += 1
 
-#         while i <= (data.N_user):
-#             if data.users[i][0] == hapus_jin:
-#                 konfirmasi = input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ")
-#                 if konfirmasi == "Y" or konfirmasi == 'y':
-#                     # Hapus jin
-#                     for i in range(1, data.N_user+1):
-#                         if data.users[i][0] == hapus_jin:
-#                             data.users[i] = ['', '', '']
-#                             for j in range(i, data.N_user):
-#                                 data.users[j] = data.users[j+1]
-#                             break 
-#                     # Hapus candi jin
-#                     for i in range (data.N_candi):
-#                         if data.users[i][1] == hapus_jin:
-#                             data.users[i] = ['', '', '','','']
-#                             for j in range(i, data.N_user):
-#                                 data.users[j] = data.users[j+1]
-#                             break    
-#                     print("Jin telah berhasil dihapus dari alam gaib.")
-#                     break
-#                 else: # Konfirmasi == "N" or "n"
-#                     break
-#             elif i == (data.N_user):
-#                 print("Tidak ada jin dengan username tersebut.")
-#                 break
-#             else:
-#                 i += 1
-
 # F05
 def ubahjin():
     """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.
@@ -319,6 +291,7 @@ def batchkumpul():
 
 def batchbangun():
     global role
+    global bahan_bangunan
     if role == "bandung_bondowoso":
         count_jin_pembangun = 0
         i = 0
@@ -333,7 +306,7 @@ def batchbangun():
         batu = 0
         air = 0
         if count_jin_pembangun == 0:
-            print("Kumpul gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
+            print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
         else:
             beda_pasir = 0
             beda_batu = 0
@@ -366,14 +339,7 @@ def batchbangun():
                 bahan_bangunan[1][2] = str(a)
                 bahan_bangunan[2][2] = str(b)
                 bahan_bangunan[3][2] = str(c)
-                count_candi = 0
-                i = 0
-                while True:
-                    if user[i] != "-":
-                        count_candi += 1
-                    else:
-                        break
-                    i += 1
+                count_candi = hitung_candi()
                 if (100-count_candi) < count_jin_pembangun:
                     repetition = 100-count_candi
                 else:
@@ -394,7 +360,10 @@ def batchbangun():
                     air = arr_temp_bahan_bangunan[i][2]
                     id_candi = tools.id_candi(candi)
                     tools.write_array_candi(candi,id_candi,pembuat,pasir,batu,air)
-                print(f"Jin berhasil membangun total {repetition} candi.")
+                if repetition < 0:
+                    print(f"Jin berhasil membangun total 0 candi.")
+                else:
+                    print(f"Jin berhasil membangun total {repetition} candi.")
     else:
         print("Maaf anda tidak memiliki akses untuk fungsi tersebut")
 #F09
@@ -449,11 +418,13 @@ def laporanjin():
                 else:
                     break
                 i += 1
-            for x in range(4):
+            for x in range(count_jin_pembangun):
                 j = 0
                 pembuat = arr_jin_jmlhcandi[x][0]
                 count_jmlh_candi = 0
                 while True:
+                    if j == 101:
+                        break
                     if candi[j] != "-":
                         if candi[j][1] == pembuat:
                             count_jmlh_candi += 1
@@ -509,6 +480,13 @@ def laporancandi():
         id_termurah = 0
         i=1
         while True:
+            if i == 101:
+                print("Total Pasir yang digunakan:",jumlah_pasir)
+                print("Total batu yang digunakan:",jumlah_batu)
+                print("Total air yang digunakan:",jumlah_air)
+                print(f"ID Candi Termahal: {id_termahal} (Rp {termahal})")
+                print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
+                break
             if candi [i] == "-":
                 print("Total Pasir yang digunakan:",jumlah_pasir)
                 print("Total batu yang digunakan:",jumlah_batu)
@@ -607,7 +585,7 @@ def load():
 
         return fUsers,fCandi,fBahan
     else:
-        exit()
+        quit()
 
 #F14
 def save():

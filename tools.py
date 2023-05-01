@@ -1,22 +1,3 @@
-# import os
-# import sys
-# from F01 import *
-# from F02 import *
-# # from F03 import *
-# # from F04 import *
-# # from F05 import *
-# from F06 import *
-# from F07 import *
-# from F08 import *
-# from F09 import *
-# from F10 import *
-# from F11 import *
-# from F12 import *
-# # from F13 import *
-# from F14 import *
-# from F15 import *
-# from F16 import *
-# from fungsi import *
 # FIKSS
 
 def seplit(string, x):
@@ -150,7 +131,7 @@ def to_array_candi(file,array,id,pembuat,pasir,batu,air):
     array[count] = [str(id),str(pembuat),str(pasir),str(batu),str(air)]
 
 def write_array_candi(array,id,pembuat,pasir,batu,air):
-    count = -1
+    count = 0
     for i in range(101):
         if array[i] != "-":
             count+=1

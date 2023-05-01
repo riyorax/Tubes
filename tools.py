@@ -16,7 +16,7 @@ def csv_array_user(file,array):
     f = open(file, 'r')
     cc = f.readline()
     if cc == '':
-        print("Selesai")
+        print("")
     else:
         i = 0
         while True:
@@ -44,7 +44,7 @@ def csv_array_bahan_bangunan(file,array):
     f = open(file, 'r')
     cc = f.readline()
     if cc == '':
-        print("Selesai")
+        print("")
     else:
         i = 0
         while True:

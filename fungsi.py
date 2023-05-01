@@ -422,7 +422,7 @@ def laporanjin():
             print(f"> Jumlah Air: {bahan_bangunan[2][2]} unit")
             print(f"> Jumlah Batu: {bahan_bangunan[3][2]} unit")
     else:
-        print("Maaf anda tidak memiliki akses untuk fungsi tersebut")
+        print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
 #F10
 def laporancandi():
     global candi

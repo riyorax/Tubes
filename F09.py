@@ -3,6 +3,8 @@ from list_data import *
 
 def laporanjin():
     global user
+    global bahan_bangunan
+    global bahan_bangunan
     if user == "bandung_bondowoso":
         count_jin = 0
         i = 0

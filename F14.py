@@ -3,6 +3,7 @@ import tools
 from list_data import *
 
 def save():
+    def save():
     global user
     global bahan_bangunan
     global candi
@@ -29,7 +30,7 @@ def save():
         os.mkdir(path) # membuat folder
 
     # menyimpan data array ke csv 
-    tools.write_csv_user(f"{folder}/user.csv",user)
-    tools.write_csv_bahan_bangunan(f"{folder}/bahan_bangunan.csv",bahan_bangunan)
-    tools.write_csv_candi(f"{folder}/candi.csv",candi)
+    tools.write_csv_user(f"{path}/user.csv",user)
+    tools.write_csv_bahan_bangunan(f"{path}/bahan_bangunan.csv",bahan_bangunan)
+    tools.write_csv_candi(f"{path}/candi.csv",candi)
     print(f"Berhasil menyimpan data di folder {path}")

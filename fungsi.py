@@ -296,15 +296,7 @@ def batchbangun():
     global role
     global bahan_bangunan
     if role == "bandung_bondowoso":
-        count_jin_pembangun = 0
-        i = 0
-        while True:
-            if user[i] != "-":
-                if user[i][2] == "jin_pembangun":
-                    count_jin_pembangun += 1
-            else:
-                break
-            i += 1
+        count_jin_pembangun = hitung_jin_pembangun()
         pasir = 0
         batu = 0
         air = 0

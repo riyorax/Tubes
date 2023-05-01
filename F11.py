@@ -1,25 +1,26 @@
-# from list_data import *
-def hancurkancandi():
-    global candi
-    id = int(input("Masukkan ID candi: "))
+def hancurkancandi(arr_candi):
+    id = input("Masukkan ID candi: ")
     yakin = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)?")
-    i = 0 
-    while True :
-        if candi [i][0] == id :
-            candi [i]= [0,0,0,0,0]
-            return candi
-        if candi [i] == "-" :
-            print("Tidak ada candi dengan ID tersebut.")
-            return candi
+    blank_index = 0
+    if yakin == "Y" :
+        for i in range (101):
+            if arr_candi [i][0] == id :
+                arr_candi [i]= "-"
+                for i in range (101):
+                    if arr_candi[i]==("-"):
+                        blank_index = i
+                        break
+                for i in range(blank_index+1 , 101):
+                    arr_candi[i - 1] = arr_candi[i]
+                    if i == 101:
+                        arr_candi[i-1] = '-'    
+       
+                return arr_candi
+            
+        
+        print("Tidak ada candi dengan ID tersebut.")
+        return arr_candi
+            
+    else : 
+        print("Candi tidak jadi dihancurkan")
 
-arr = [1, 2, 3, "-", 5, 6]  
-blank_index = arr.index("-")
-for i in range(blank_index + 1, len(arr)):
-    arr[i - 1] = arr[i]
-    if i == len(arr):
-          arr[i-1] = '-'
-
-print(arr)  # Output: [1, 2, 3, 5, 6, None]
-
-[['id', 'pembuat', 'pasir', 'batu', 'air'], "-", ['2', 'pembuat', 'pasir', 'batu', 'air'], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-[['id', 'pembuat', 'pasir', 'batu', 'air'], ['2', 'pembuat', 'pasir', 'batu', 'air'], '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-', '-']

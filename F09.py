@@ -2,13 +2,13 @@ import tools
 from list_data import *
 
 def laporanjin():
-    global role
-    if role == "bandung_bondowoso":
+    global user
+    if user == "bandung_bondowoso":
         count_jin = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pengumpul" or role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pengumpul" or user[i][2] == "jin_pembangun":
                     count_jin += 1
             else:
                 break
@@ -17,8 +17,8 @@ def laporanjin():
         count_jin_pengumpul = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pengumpul":
+            if user[i] != "-":
+                if user[i][2] == "jin_pengumpul":
                     count_jin_pengumpul += 1
             else:
                 break
@@ -27,8 +27,8 @@ def laporanjin():
         count_jin_pembangun = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pembangun":
                     count_jin_pembangun += 1
             else:
                 break
@@ -45,9 +45,9 @@ def laporanjin():
             idx_jin = 0
             i = 0
             while idx_jin<count_jin_pembangun:
-                if role[i] != "-":
-                    if role[i][2] == "jin_pembangun":
-                        arr_jin_jmlhcandi[idx_jin] = [role[i][0],0]
+                if user[i] != "-":
+                    if user[i][2] == "jin_pembangun":
+                        arr_jin_jmlhcandi[idx_jin] = [user[i][0],0]
                         idx_jin += 1
                 else:
                     break

@@ -360,8 +360,8 @@ def laporanjin():
         count_jin = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pengumpul" or role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pengumpul" or user[i][2] == "jin_pembangun":
                     count_jin += 1
             else:
                 break
@@ -370,8 +370,8 @@ def laporanjin():
         count_jin_pengumpul = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pengumpul":
+            if user[i] != "-":
+                if user[i][2] == "jin_pengumpul":
                     count_jin_pengumpul += 1
             else:
                 break
@@ -380,8 +380,8 @@ def laporanjin():
         count_jin_pembangun = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pembangun":
                     count_jin_pembangun += 1
             else:
                 break
@@ -398,9 +398,9 @@ def laporanjin():
             idx_jin = 0
             i = 0
             while idx_jin<count_jin_pembangun:
-                if role[i] != "-":
-                    if role[i][2] == "jin_pembangun":
-                        arr_jin_jmlhcandi[idx_jin] = [role[i][0],0]
+                if user[i] != "-":
+                    if user[i][2] == "jin_pembangun":
+                        arr_jin_jmlhcandi[idx_jin] = [user[i][0],0]
                         idx_jin += 1
                 else:
                     break
@@ -473,16 +473,16 @@ def laporancandi():
                 print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
                 break
             else : 
-                jumlah_pasir += candi[i][2]
-                jumlah_batu += candi[i][3]
-                jumlah_air += candi[i][4]
+                jumlah_pasir += int(candi[i][2])
+                jumlah_batu += int(candi[i][3])
+                jumlah_air += int(candi[i][4])
 
-            if termahal < (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 ):
-                termahal = (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 )
+            if termahal < (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
+                termahal = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 )
                 id_termahal = candi[i][0]
             
-            if termurah > (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 ):
-                termurah = (candi [i][2] * 10000 + candi[i][3] * 15000 + candi[i][4] * 7500 )
+            if termurah > (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
+                termurah = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500) 
                 id_termurah = candi [i][0]
 #F11
 def hancurkancandi():

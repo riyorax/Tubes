@@ -45,8 +45,8 @@ def batchbangun():
         count_jin_pembangun = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pembangun":
                     count_jin_pembangun += 1
             else:
                 break
@@ -91,7 +91,7 @@ def batchbangun():
                 count_candi = 0
                 i = 0
                 while True:
-                    if role[i] != "-":
+                    if user[i] != "-":
                         count_candi += 1
                     else:
                         break
@@ -104,8 +104,8 @@ def batchbangun():
                 flag = 0
                 j = 0
                 while (flag < repetition):
-                    if role[j] != "-":
-                        if role[j][2] == "jin_pembangun":
+                    if user[j] != "-":
+                        if user[j][2] == "jin_pembangun":
                             arr_pembuat[flag] = role[j][0]
                             flag +=1
                     j += 1

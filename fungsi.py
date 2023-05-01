@@ -21,7 +21,7 @@ def login():
                 if inuser == user[i][0] and inpasw == user[i][1] :
                     kode_login = 2
                     role = user[i][2]
-                    username = [i][0]
+                    username = user[i][0]
                 elif inuser == user[i][0] and inpasw != user[i][1]:
                     kode_login = 1
 
@@ -207,7 +207,7 @@ def bangun():
             bahan_bangunan[2][2] = str(b)
             bahan_bangunan[3][2] = str(c)
             id_candi = tools.id_candi(candi)
-            count_candi = tools.hitung_candi()
+            count_candi = hitung_candi()
             if count_candi<100:
                 tools.write_array_candi(candi,id_candi,username,pasir,batu,air)
             print("Candi berhasil dibangun.")
@@ -244,8 +244,8 @@ def batchkumpul():
         count = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pengumpul":
+            if user[i] != "-":
+                if user[i][2] == "jin_pengumpul":
                     count += 1
             else:
                 break
@@ -279,8 +279,8 @@ def batchbangun():
         count_jin_pembangun = 0
         i = 0
         while True:
-            if role[i] != "-":
-                if role[i][2] == "jin_pembangun":
+            if user[i] != "-":
+                if user[i][2] == "jin_pembangun":
                     count_jin_pembangun += 1
             else:
                 break
@@ -325,7 +325,7 @@ def batchbangun():
                 count_candi = 0
                 i = 0
                 while True:
-                    if role[i] != "-":
+                    if user[i] != "-":
                         count_candi += 1
                     else:
                         break
@@ -338,9 +338,9 @@ def batchbangun():
                 flag = 0
                 j = 0
                 while (flag < repetition):
-                    if role[j] != "-":
-                        if role[j][2] == "jin_pembangun":
-                            arr_pembuat[flag] = role[j][0]
+                    if user[j] != "-":
+                        if user[j][2] == "jin_pembangun":
+                            arr_pembuat[flag] = user[j][0]
                             flag +=1
                     j += 1
                 for i in range(repetition):
@@ -349,7 +349,6 @@ def batchbangun():
                     batu = arr_temp_bahan_bangunan[i][1]
                     air = arr_temp_bahan_bangunan[i][2]
                     id_candi = tools.id_candi(candi)
-                    print(id_candi)
                     tools.write_array_candi(candi,id_candi,pembuat,pasir,batu,air)
     else:
         print("Maaf anda tidak memiliki akses untuk fungsi tersebut")
@@ -592,6 +591,24 @@ def exit():
     print("Terima kasih dan sampai jumpa kembali... :)")
     quit()
 
+def hitung_candi ():
+    global candi
+    count_candi = 0 
+    i = 0
+    while True :
+        if candi[i] != "-" :
+            count_candi += 1 
+            i += 1
+        else :
+            return count_candi
+
+def cek():
+    print(user)
+    print(bahan_bangunan)
+    print(candi)
+    print(username)
+    print(role)
+
 def run(fungsi):
     if fungsi == "login":
         login()
@@ -625,3 +642,5 @@ def run(fungsi):
         laporancandi ()
     if fungsi == "exit":
         exit()
+    if fungsi == "cek":
+        cek()

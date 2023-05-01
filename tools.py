@@ -108,7 +108,7 @@ def id_candi(array):
     while True:
         found = False
         for i in range(101):
-            if array[i] == candi:
+            if array[i][0] == str(candi):
                 candi += 1
                 found = True
                 break
@@ -155,16 +155,3 @@ def write_csv_candi(file,array):
     for i in range(count+1):
         f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
     f.close()
-
-
-
-def hitung_candi ():
-    global candi
-    count_candi = 0 
-    i = 0
-    while True :
-        if candi[i] != "-" :
-            count_candi += 1 
-            i += 1
-        else :
-            return count_candi

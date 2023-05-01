@@ -1,21 +1,22 @@
-import os
-import sys
-from F01 import *
-from F02 import *
-# from F03 import *
-# from F04 import *
-# from F05 import *
-from F06 import *
-from F07 import *
-from F08 import *
-from F09 import *
-from F10 import *
-from F11 import *
-from F12 import *
-# from F13 import *
-from F14 import *
-from F15 import *
-from F16 import *
+# import os
+# import sys
+# from F01 import *
+# from F02 import *
+# # from F03 import *
+# # from F04 import *
+# # from F05 import *
+# from F06 import *
+# from F07 import *
+# from F08 import *
+# from F09 import *
+# from F10 import *
+# from F11 import *
+# from F12 import *
+# # from F13 import *
+# from F14 import *
+# from F15 import *
+# from F16 import *
+# from fungsi import *
 # FIKSS
 
 def seplit(string, x):
@@ -155,39 +156,39 @@ def write_csv_candi(file,array):
         f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
     f.close()
 
-def run(fungsi):
-    if fungsi == "login":
-        login()
-    if fungsi == "logout":
-        logout()
-    # if fungsi == "summonjin":
-    #     summonjin()
-    if fungsi == "bangun":
-        bangun ()
-    if fungsi == "kumpul":
-        kumpul ()
-    # if fungsi == "ubahjin":
-    #     ubahjin()
-    if fungsi == "batchkumpul":
-        batchkumpul ()
-    if fungsi == "batchbangun":
-        batchbangun ()
-    if fungsi == "help":
-        help ()
-    if fungsi == "save":
-        save ()
-    if fungsi == "ayamberkokok":
-        ayamberkokok ()
-    # if fungsi == "hapusjin":
-    #     hapusjin ()
-    if fungsi == "hancurkancandi":
-        hancurkancandi ()
-    if fungsi == "laporanjin":
-        laporanjin ()
-    if fungsi == "laporancandi":
-        laporancandi ()
-    if fungsi == "exit":
-        exit()
+# def run(fungsi):
+#     if fungsi == "login":
+#         login()
+#     if fungsi == "logout":
+#         logout()
+#     # if fungsi == "summonjin":
+#     #     summonjin()
+#     if fungsi == "bangun":
+#         bangun ()
+#     if fungsi == "kumpul":
+#         kumpul ()
+#     # if fungsi == "ubahjin":
+#     #     ubahjin()
+#     if fungsi == "batchkumpul":
+#         batchkumpul ()
+#     if fungsi == "batchbangun":
+#         batchbangun ()
+#     if fungsi == "help":
+#         help ()
+#     if fungsi == "save":
+#         save ()
+#     if fungsi == "ayamberkokok":
+#         ayamberkokok ()
+#     # if fungsi == "hapusjin":
+#     #     hapusjin ()
+#     if fungsi == "hancurkancandi":
+#         hancurkancandi ()
+#     if fungsi == "laporanjin":
+#         laporanjin ()
+#     if fungsi == "laporancandi":
+#         laporancandi ()
+#     if fungsi == "exit":
+#         exit()
 
 def hitung_candi ():
     global candi

@@ -5,6 +5,8 @@ candi = ["-" for i in range(101)]
 bahan_bangunan = ["-" for i in range(4)]
 N_user = 3
 N_candi = 0
+role = ""
+username = ""
 
 def f_users(file_users):
     global user

@@ -1,7 +1,7 @@
 import tools
 import fungsi
 
-# fungsi.load()
+fungsi.load()
 
 while True:
   masukan = input(">>> ")

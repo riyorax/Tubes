@@ -39,4 +39,7 @@ def load():
         exit()
  
 # Cek
-# load()
+load()
+print(user)
+print(bahan_bangunan)
+print(candi)

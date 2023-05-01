@@ -1,4 +1,4 @@
-# import list_data as data
+import list_data as data
 
 def ubahjin():
     """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.

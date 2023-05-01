@@ -425,53 +425,57 @@ def laporanjin():
         print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
 #F10
 def laporancandi():
+    global role
     global candi
-    if hitung_candi() == 0 :
-        print("Total Candi: 0")
-        print("Total Pasir yang digunakan: 0")
-        print("Total Batu yang digunakan: 0")
-        print("Total Air yang digunakan: 0")
-        print("ID Candi Termahal: -")
-        print("ID Candi Termurah: -")
-    else :
-        print("Total Candi:",hitung_candi())
-        
-        jumlah_pasir = 0
-        jumlah_air = 0
-        jumlah_batu = 0
-        termahal = 0
-        termurah = 99999999999999999999999999
-        id_termahal = 0
-        id_termurah = 0
-        i=1
-        while True:
-            if i == 101:
-                print("Total Pasir yang digunakan:",jumlah_pasir)
-                print("Total batu yang digunakan:",jumlah_batu)
-                print("Total air yang digunakan:",jumlah_air)
-                print(f"ID Candi Termahal: {id_termahal} (Rp {termahal})")
-                print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
-                break
-            if candi [i] == "-":
-                print("Total Pasir yang digunakan:",jumlah_pasir)
-                print("Total batu yang digunakan:",jumlah_batu)
-                print("Total air yang digunakan:",jumlah_air)
-                print(f"ID Candi Termahal: {id_termahal} (Rp {termahal})")
-                print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
-                break
-            else : 
-                jumlah_pasir += int(candi[i][2])
-                jumlah_batu += int(candi[i][3])
-                jumlah_air += int(candi[i][4])
-
-            if termahal < (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
-                termahal = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 )
-                id_termahal = candi[i][0]
+    if role == "bandung_bondowoso":
+        if hitung_candi() == 0 :
+            print("Total Candi: 0")
+            print("Total Pasir yang digunakan: 0")
+            print("Total Batu yang digunakan: 0")
+            print("Total Air yang digunakan: 0")
+            print("ID Candi Termahal: -")
+            print("ID Candi Termurah: -")
+        else :
+            print("Total Candi:",hitung_candi())
             
-            if termurah > (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
-                termurah = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500) 
-                id_termurah = candi [i][0]
-            i+=1
+            jumlah_pasir = 0
+            jumlah_air = 0
+            jumlah_batu = 0
+            termahal = 0
+            termurah = 99999999999999999999999999
+            id_termahal = 0
+            id_termurah = 0
+            i=1
+            while True:
+                if i == 101:
+                    print("Total Pasir yang digunakan:",jumlah_pasir)
+                    print("Total batu yang digunakan:",jumlah_batu)
+                    print("Total air yang digunakan:",jumlah_air)
+                    print(f"ID Candi Termahal: {id_termahal} (Rp {termahal})")
+                    print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
+                    break
+                if candi [i] == "-":
+                    print("Total Pasir yang digunakan:",jumlah_pasir)
+                    print("Total batu yang digunakan:",jumlah_batu)
+                    print("Total air yang digunakan:",jumlah_air)
+                    print(f"ID Candi Termahal: {id_termahal} (Rp {termahal})")
+                    print(f"ID Candi Termurah: {id_termurah} (Rp {termurah})")
+                    break
+                else : 
+                    jumlah_pasir += int(candi[i][2])
+                    jumlah_batu += int(candi[i][3])
+                    jumlah_air += int(candi[i][4])
+
+                if termahal < (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
+                    termahal = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 )
+                    id_termahal = candi[i][0]
+                
+                if termurah > (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
+                    termurah = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500) 
+                    id_termurah = candi [i][0]
+                i+=1
+    else:
+        print("Laporan candi hanya dapat diakses oleh akun Bandung Bondowoso.")
 #F11
 def hancurkancandi():
     global candi
@@ -505,7 +509,7 @@ def hancurkancandi():
         
 #F12
 def ayamberkokok ():
-    if hitung_candi() <= 100 :
+    if hitung_candi() < 100 :
         print("Kukuruyuk.. Kukuruyuk..")
         print("Jumlah Candi: ", hitung_candi())
         print("Selamat, Roro Jonggrang memenangkan permainan!")

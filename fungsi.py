@@ -527,7 +527,7 @@ def hancurkancandi():
                         candi[i - 1] = candi[i]
                         if i == 101:
                             candi[i-1] = '-'
-                return candi
+                    return candi
                 
             
             print("Tidak ada candi dengan ID tersebut.")
@@ -623,6 +623,7 @@ def save():
 #F15
 def help () :
     global role
+    print("=========== HELP ===========")
     if role == "" :
         print ('1. login',"\nUntuk masuk menggunakan akun")
         print ('2. exit',"\nUntuk keluar dari program dan kembali ke terminal")

@@ -3,7 +3,7 @@ import tools
 user = ["-" for i in range(103)]
 candi = ["-" for i in range(101)]
 bahan_bangunan = ["-" for i in range(4)]
-N_user = 3
+N_user = 2
 N_candi = 0
 role = ""
 username = ""
@@ -20,6 +20,7 @@ def f_candi(file_candi):
 
 def f_bahan_bangunan(file_bahan_bangunan):
     global bahan_bangunan
+    tools.initial_bahan_bangunan(file_bahan_bangunan)
     bahan_bangunan = tools.csv_array_bahan_bangunan(file_bahan_bangunan, bahan_bangunan)
     return bahan_bangunan
 

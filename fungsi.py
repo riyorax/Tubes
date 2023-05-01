@@ -54,6 +54,7 @@ def summonjin():
     global role
     global user
     global N_user
+    N_user = hitung_user()
     if (not(role =='bandung_bondowoso')):
         print("Anda tidak memiliki wewenang untuk summon jin!")
         return 0
@@ -114,6 +115,8 @@ def hapusjin():
     global user
     global N_user
     global N_candi
+    N_user = hitung_user()
+    N_candi = hitung_candi()
     if (not(role =='bandung_bondowoso')):
         print("Anda tidak memiliki wewenang untuk menghapus jin!")
         return 0

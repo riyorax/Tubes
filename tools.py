@@ -28,6 +28,18 @@ def csv_array_user(file,array):
     f.close()
     return array
 
+
+def initial_bahan_bangunan(file):
+    f = open(file, 'r')
+    cc = f.readline()
+    cc = f.readline()
+    if cc == "":
+        f = open(file, 'w')
+        f.write("nama;deskripsi;jumlah\n")
+        f.write("pasir;sand;0\n")
+        f.write("batu;stone;0\n")
+        f.write("air;stone;0\n")
+
 def csv_array_bahan_bangunan(file,array):
     f = open(file, 'r')
     cc = f.readline()

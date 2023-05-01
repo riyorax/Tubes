@@ -41,6 +41,7 @@ def batchkumpul():
 
 def batchbangun():
     global role
+    global user
     if role == "bandung_bondowoso":
         count_jin_pembangun = 0
         i = 0

@@ -1,6 +1,7 @@
 # from list_data import *
 def help () :
     global role
+    print("=========== HELP ===========")
     if role == "" :
         print ('1. login',"\nUntuk masuk menggunakan akun")
         print ('2. exit',"\nUntuk keluar dari program dan kembali ke terminal")

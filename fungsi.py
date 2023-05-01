@@ -486,16 +486,31 @@ def laporancandi():
 #F11
 def hancurkancandi():
     global candi
-    id = int(input("Masukkan ID candi: "))
-    yakin = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)?")
-    i = 0 
-    while True :
-        if candi [i][0] == id :
-            candi [i]= [0,0,0,0,0]
-            return candi
-        if candi [i] == "-" :
+    global role
+    if role == "roro_jonggrang":
+        id = input("Masukkan ID candi: ")
+        yakin = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)?")
+        blank_index = 0
+        if yakin == "Y" :
+            for i in range (101):
+                if candi [i][0] == id :
+                    candi [i]= "-"
+                    for i in range (101):
+                        if candi[i]==("-"):
+                            blank_index = i
+                            break
+                    for i in range(blank_index+1 , 101):
+                        candi[i - 1] = candi[i]
+                        if i == 101:
+                            candi[i-1] = '-'    
+                
+            
             print("Tidak ada candi dengan ID tersebut.")
-            return candi
+                
+        else : 
+            print("Candi tidak jadi dihancurkan")
+    else:
+        print("Maaf anda tidak memiliki akses untuk fungsi tersebut")
         
 #F12
 def ayamberkokok ():

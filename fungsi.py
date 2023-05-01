@@ -370,35 +370,11 @@ def batchbangun():
 def laporanjin():
     global role
     if role == "bandung_bondowoso":
-        count_jin = 0
-        i = 0
-        while True:
-            if user[i] != "-":
-                if user[i][2] == "jin_pengumpul" or user[i][2] == "jin_pembangun":
-                    count_jin += 1
-            else:
-                break
-            i += 1
+        count_jin = hitung_jin_pembangun() + hitung_jin_pengumpul()
         print(f"> Total Jin:{count_jin}")
-        count_jin_pengumpul = 0
-        i = 0
-        while True:
-            if user[i] != "-":
-                if user[i][2] == "jin_pengumpul":
-                    count_jin_pengumpul += 1
-            else:
-                break
-            i += 1
+        count_jin_pengumpul = hitung_jin_pengumpul()
         print(f"> Total Jin Pengumpul:{count_jin_pengumpul}")
-        count_jin_pembangun = 0
-        i = 0
-        while True:
-            if user[i] != "-":
-                if user[i][2] == "jin_pembangun":
-                    count_jin_pembangun += 1
-            else:
-                break
-            i += 1
+        count_jin_pembangun = hitung_jin_pembangun()
         print(f"> Total Jin Pembangun:{count_jin_pembangun}")
         if count_jin_pembangun == 0:
             print("> Jin Terajin: -")
@@ -411,9 +387,11 @@ def laporanjin():
             idx_jin = 0
             i = 0
             while idx_jin<count_jin_pembangun:
+                if i == 103:
+                    break
                 if user[i] != "-":
                     if user[i][2] == "jin_pembangun":
-                        arr_jin_jmlhcandi[idx_jin] = [user[i][0],0]
+                        arr_jin_jmlhcandi[idx_jin] = [user[i][0],str(0)]
                         idx_jin += 1
                 else:
                     break
@@ -431,7 +409,7 @@ def laporanjin():
                     else:
                         break
                     j += 1
-                arr_jin_jmlhcandi[x][1] = count_jmlh_candi
+                arr_jin_jmlhcandi[x][1] = str(count_jmlh_candi)
             max_jmlh = arr_jin_jmlhcandi[0][1]
             max_pembuat = arr_jin_jmlhcandi[0][0]
             min_jmlh = arr_jin_jmlhcandi[0][1]
@@ -668,7 +646,6 @@ def exit():
 def hitung_candi ():
     global candi
     count_candi = -1
-    i = 0
     for i in range(101):
         if candi[i] != "-" :
             count_candi += 1 
@@ -677,13 +654,30 @@ def hitung_candi ():
 def hitung_user ():
     global user
     count_user = -1
-    i = 0
-    while True :
+    for i in range(103):
         if user[i] != "-" :
-            count_user += 1 
-            i += 1
-        else :
-            return count_user
+            count_user += 1
+    return count_user
+
+def hitung_jin_pembangun():
+    global user
+    count_jin_pembangun = 0
+    for i in range(103):
+        if user[i] == "-":
+            return count_jin_pembangun
+        if user[i][2] == "jin_pembangun" :
+            count_jin_pembangun += 1
+    return count_jin_pembangun
+
+def hitung_jin_pengumpul():
+    global user
+    count_jin_pengumpul = 0
+    for i in range(103):
+        if user[i] == "-":
+            return count_jin_pengumpul
+        if user[i][2] == "jin_pengumpul" :
+            count_jin_pengumpul += 1
+    return count_jin_pengumpul
 
 def cek():
     print(user)

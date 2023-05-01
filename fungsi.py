@@ -7,6 +7,7 @@ import random
 def login():
     global username
     global role
+    global user
     if role != "" :
         print("Status anda dalam keadaan login, silahkan logout terlebih dahulu!!")
     else:
@@ -17,11 +18,11 @@ def login():
         while kode_login != 2:
             kode_login = 0
             for i in range(103):
-                if inuser == role[i][0] and inpasw == role[i][1] :
+                if inuser == user[i][0] and inpasw == user[i][1] :
                     kode_login = 2
-                    role = role[i][2]
+                    role = user[i][2]
                     username = [i][0]
-                elif inuser == role[i][0] and inpasw != role [i][1]:
+                elif inuser == user[i][0] and inpasw != user[i][1]:
                     kode_login = 1
 
             if kode_login != 2:
@@ -590,3 +591,37 @@ def exit():
             flag_exit = True
     print("Terima kasih dan sampai jumpa kembali... :)")
     quit()
+
+def run(fungsi):
+    if fungsi == "login":
+        login()
+    if fungsi == "logout":
+        logout()
+    # if fungsi == "summonjin":
+    #     summonjin()
+    if fungsi == "bangun":
+        bangun ()
+    if fungsi == "kumpul":
+        kumpul ()
+    # if fungsi == "ubahjin":
+    #     ubahjin()
+    if fungsi == "batchkumpul":
+        batchkumpul ()
+    if fungsi == "batchbangun":
+        batchbangun ()
+    if fungsi == "help":
+        help ()
+    if fungsi == "save":
+        save ()
+    if fungsi == "ayamberkokok":
+        ayamberkokok ()
+    # if fungsi == "hapusjin":
+    #     hapusjin ()
+    if fungsi == "hancurkancandi":
+        hancurkancandi ()
+    if fungsi == "laporanjin":
+        laporanjin ()
+    if fungsi == "laporancandi":
+        laporancandi ()
+    if fungsi == "exit":
+        exit()

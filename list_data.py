@@ -1,6 +1,6 @@
 import tools
 
-role = "jin_pembangun"
+role = ""
 username = ""
 user = ["-" for i in range(103)] # Panjang array sebanyak 103 karena maximal jin adalah 100 dan terdapat 3 line bawaan untuk header, bondowoso dan roro
 bahan_bangunan = ["-" for i in range(4)] # Panjang array 4 untuk satu line untuk header dan 3 lagi untuk bahan bangunan

@@ -156,39 +156,7 @@ def write_csv_candi(file,array):
         f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
     f.close()
 
-# def run(fungsi):
-#     if fungsi == "login":
-#         login()
-#     if fungsi == "logout":
-#         logout()
-#     # if fungsi == "summonjin":
-#     #     summonjin()
-#     if fungsi == "bangun":
-#         bangun ()
-#     if fungsi == "kumpul":
-#         kumpul ()
-#     # if fungsi == "ubahjin":
-#     #     ubahjin()
-#     if fungsi == "batchkumpul":
-#         batchkumpul ()
-#     if fungsi == "batchbangun":
-#         batchbangun ()
-#     if fungsi == "help":
-#         help ()
-#     if fungsi == "save":
-#         save ()
-#     if fungsi == "ayamberkokok":
-#         ayamberkokok ()
-#     # if fungsi == "hapusjin":
-#     #     hapusjin ()
-#     if fungsi == "hancurkancandi":
-#         hancurkancandi ()
-#     if fungsi == "laporanjin":
-#         laporanjin ()
-#     if fungsi == "laporancandi":
-#         laporancandi ()
-#     if fungsi == "exit":
-#         exit()
+
 
 def hitung_candi ():
     global candi

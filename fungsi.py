@@ -46,62 +46,65 @@ def logout():
         print("keluar dari akun...")
 
 # F03
-# def summonjin():
-#     """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
-#     fungsi mengambil input username, password, dan jenis jin."""
-#     global role
-#     if (not(role =='bandung_bondowoso')):
-#         print("Anda tidak memiliki wewenang untuk summon jin!")
-#         return 0
-#     else:
-#         print("Jenis jin yang dapat dipanggil:")
-#         print("(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
-#         print("(2) Pembangun - Bertugas membangun candi")
+def summonjin():
+    """Bandung Bondowoso memiliki wewenang memanggil jin dari dunia lain. 
+    fungsi mengambil input username, password, dan jenis jin."""
+    global role
+    global user
+    global N_user
+    if (not(role =='bandung_bondowoso')):
+        print("Anda tidak memiliki wewenang untuk summon jin!")
+        return 0
+    else:
+        print("Jenis jin yang dapat dipanggil:")
+        print("(1) Pengumpul - Bertugas mengumpulkan bahan bangunan")
+        print("(2) Pembangun - Bertugas membangun candi")
 
-#         if data.N_user == 103:
-#             print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
-#         else:
-#             jenis_jin = input("Masukkan nomor jenis jin yang ingin dipanggil: ")
+        if N_user == 103:
+            print("Jumlah Jin telah maksimal! (100 jin). Bandung tidak dapat men-summon lebih dari itu")
+        else:
+            jenis_jin = input("Masukkan nomor jenis jin yang ingin dipanggil: ")
             
-#             # Cek input jenis jin
-#             while (not((jenis_jin == "1") or (jenis_jin == "2"))):
-#                 print(f"\nTidak ada jenis jin bernomor “{jenis_jin}”!")
-#                 jenis_jin = input("\nMasukkan nomor jenis jin yang ingin dipanggil: ")
-#             if jenis_jin == "1":
-#                 jenis_jin = "Pengumpul"
-#                 print("\nMemilih jin “Pengumpul”.\n")
-#             elif jenis_jin == "2":
-#                 jenis_jin = "Pembangun"
-#                 print("\nMemilih jin “Pembangun”.\n")
+            # Cek input jenis jin
+            while (not((jenis_jin == "1") or (jenis_jin == "2"))):
+                print(f"\nTidak ada jenis jin bernomor “{jenis_jin}”!")
+                jenis_jin = input("\nMasukkan nomor jenis jin yang ingin dipanggil: ")
+            if jenis_jin == "1":
+                jenis_jin = "jin_pengumpul"
+                print("\nMemilih jin “Pengumpul”.\n")
+            elif jenis_jin == "2":
+                jenis_jin = "jin_pembangun"
+                print("\nMemilih jin “Pembangun”.\n")
 
-#             username_jin = input("Masukkan username jin: ")
+            username_jin = input("Masukkan username jin: ")
 
-#             # Cek input username jin
-#             while True:
-#                 for i in range(1, data.N_user+1):
-#                     if data.users[i][0] == username_jin:
-#                         print(f'\nUsername “{username_jin}” sudah diambil!\n')
-#                         username_jin = input("Masukkan username jin: ")
-#                         continue
-#                 break
+            # Cek input username jin
+            while True:
+                for i in range(1, N_user+1):
+                    if user[i][0] == username_jin:
+                        print(f'\nUsername “{username_jin}” sudah diambil!\n')
+                        username_jin = input("Masukkan username jin: ")
+                        continue
+                break
 
-#             password_jin = input("Masukkan password jin: ")
+            password_jin = input("Masukkan password jin: ")
 
-#             # Cek input password jin
-#             while True:
-#                 if len(password_jin) < 5 or len(password_jin) > 25:
-#                     print("\nPassword panjangnya harus 5-25 karakter!\n")
-#                     password_jin = input("Masukkan password jin: ")
-#                     continue
-#                 print("Mengumpulkan sesajen...")
-#                 print("Menyerahkan sesajen...")
-#                 print("Membacakan mantra...")
-#                 break
+            # Cek input password jin
+            while True:
+                if len(password_jin) < 5 or len(password_jin) > 25:
+                    print("\nPassword panjangnya harus 5-25 karakter!\n")
+                    password_jin = input("Masukkan password jin: ")
+                    continue
+                print("Mengumpulkan sesajen...")
+                print("Menyerahkan sesajen...")
+                print("Membacakan mantra...")
+                break
 
-#             # Memasukkan input jin baru ke dalam array user csv
-#             data.N_user += 1
-#             data.users[data.N_user] = [username_jin, password_jin, jenis_jin]
+            # Memasukkan input jin baru ke dalam array user csv
+            N_user += 1
+            user[N_user] = [username_jin, password_jin, jenis_jin]
 
+#F04
 def hapusjin():
     """Bandung Bondowoso memiliki wewenang untuk menghapus jin.
     Fungsi menghapus jin dan candi yang dibuat oleh jin tersebut juga ikut terhapus."""
@@ -125,15 +128,19 @@ def hapusjin():
                     for i in range(1, N_user+1):
                         if user[i][0] == hapus_jin:
                             user[i] = "-"
-                            for j in range(i, N_user):
+                            for j in range(i, N_user+1):
                                 user[j] = user[j+1]
+                                if j == N_user:
+                                    user[j] == "-"
                             break 
                     # Hapus candi jin
-                    for i in range (N_candi):
-                        if user[i][1] == hapus_jin:
-                            user[i] = "-"
-                            for j in range(i, N_user):
-                                user[j] = user[j+1]
+                    for i in range (N_candi+1):
+                        if candi[i][1] == hapus_jin:
+                            candi[i] = "-"
+                            for j in range(i, N_candi+1):
+                                candi[j] = candi[j+1]
+                                if j == N_user:
+                                    user[j] == "-"
                             break    
                     print("Jin telah berhasil dihapus dari alam gaib.")
                     break
@@ -174,44 +181,48 @@ def hapusjin():
 #                 i += 1
 
 # F05
-# def ubahjin():
-#     """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.
-#     Fungsi mengubah tipe jin yang sudah di summon"""
-#     global role
-#     if (not(role =='bandung_bondowoso')):
-#         print("Anda tidak memiliki wewenang untuk mengubah tipe jin!")
-#         return 0
-#     else:
-#         ingin_ubah = input("Masukkan username jin : ")
+def ubahjin():
+    """Bandung Bondowoso memiliki wewenang untuk mengubah tipe jin.
+    Fungsi mengubah tipe jin yang sudah di summon"""
+    global role
+    global N_user
+    global user
+    if (not(role =='bandung_bondowoso')):
+        print("Anda tidak memiliki wewenang untuk mengubah tipe jin!")
+        return 0
+    else:
+        ingin_ubah = input("Masukkan username jin : ")
         
-#         i = 2
-#         while i <= (data.N_user):
-#             if data.users[i][0] == ingin_ubah:
-#                 # Validasi jenis jin dan konfirmasi perubahan
-#                 if data.users[i][2] == 'Pengumpul':
-#                     konfirmasi = input(f"Jin ini bertipe “{data.users[i][2]}”. Yakin ingin mengubah ke tipe “Pembangun” (Y/N)? ")
-#                     if konfirmasi == "Y" or konfirmasi == "y":
-#                         data.users[i][2] = 'Pembangun'
-#                         print("Jin telah berhasil diubah.")
-#                         break
-#                     else:
-#                         print("Batal mengubah tipe jin")
-#                         break
-#                 # Validasi jenis jin dan konfirmasi perubahan
-#                 elif data.users[i][2] == 'Pembangun':
-#                     konfirmasi = input(f"Jin ini bertipe “{data.users[i][2]}”. Yakin ingin mengubah ke tipe “Pengumpul” (Y/N)? ")
-#                     if konfirmasi == "Y" or konfirmasi == "y":
-#                         data.users[i][2] = 'Pengumpul'
-#                         print("Jin telah berhasil diubah.")
-#                         break
-#                     else:
-#                         print("Batal mengubah tipe jin")
-#                         break
-#             elif i == (data.N_user):
-#                 print("Tidak ada jin dengan username tersebut.")
-#                 break
-#             else:
-#                 i += 1
+        i = 2
+        while i <= (N_user):
+            if user[i][0] == ingin_ubah:
+                # Validasi jenis jin dan konfirmasi perubahan
+                if user[i][2] == 'jin_pengumpul':
+                    tipe = "Pengumpul"
+                    konfirmasi = input(f"Jin ini bertipe “{tipe}”. Yakin ingin mengubah ke tipe “Pembangun” (Y/N)? ")
+                    if konfirmasi == "Y" or konfirmasi == "y":
+                        user[i][2] = 'jin_pembangun'
+                        print("Jin telah berhasil diubah.")
+                        break
+                    else:
+                        print("Batal mengubah tipe jin")
+                        break
+                # Validasi jenis jin dan konfirmasi perubahan
+                elif user[i][2] == 'jin_pembangun':
+                    tipe = "Pembangun"
+                    konfirmasi = input(f"Jin ini bertipe “{tipe}”. Yakin ingin mengubah ke tipe “Pengumpul” (Y/N)? ")
+                    if konfirmasi == "Y" or konfirmasi == "y":
+                        user[i][2] = 'jin_pengumpul'
+                        print("Jin telah berhasil diubah.")
+                        break
+                    else:
+                        print("Batal mengubah tipe jin")
+                        break
+            elif i == (N_user):
+                print("Tidak ada jin dengan username tersebut.")
+                break
+            else:
+                i += 1
 
 #F06
 def bangun():
@@ -241,6 +252,7 @@ def bangun():
             if count_candi<100:
                 tools.write_array_candi(candi,id_candi,username,pasir,batu,air)
             print("Candi berhasil dibangun.")
+            count_candi = hitung_candi()
             print(f"Sisa candi yang perlu dibangun: {100-count_candi}")
 
     else:
@@ -349,9 +361,9 @@ def batchbangun():
                 b -= batu
                 c = int(bahan_bangunan[3][2])
                 c -= air
-                bahan_bangunan[0][2] = str(a)
-                bahan_bangunan[1][2] = str(b)
-                bahan_bangunan[2][2] = str(c)
+                bahan_bangunan[1][2] = str(a)
+                bahan_bangunan[2][2] = str(b)
+                bahan_bangunan[3][2] = str(c)
                 count_candi = 0
                 i = 0
                 while True:
@@ -476,7 +488,7 @@ def laporanjin():
 #F10
 def laporancandi():
     global candi
-    if tools.hitung_candi == 0 :
+    if hitung_candi() == 0 :
         print("Total Candi: 0")
         print("Total Pasir yang digunakan: 0")
         print("Total Batu yang digunakan: 0")
@@ -484,7 +496,7 @@ def laporancandi():
         print("ID Candi Termahal: -")
         print("ID Candi Termurah: -")
     else :
-        print("Total Candi:",tools.hitung_candi)
+        print("Total Candi:",hitung_candi())
         
         jumlah_pasir = 0
         jumlah_air = 0
@@ -514,6 +526,7 @@ def laporancandi():
             if termurah > (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500 ):
                 termurah = (int(candi [i][2]) * 10000 + int(candi[i][3]) * 15000 + int(candi[i][4]) * 7500) 
                 id_termurah = candi [i][0]
+            i+=1
 #F11
 def hancurkancandi():
     global candi
@@ -533,10 +546,12 @@ def hancurkancandi():
                     for i in range(blank_index+1 , 101):
                         candi[i - 1] = candi[i]
                         if i == 101:
-                            candi[i-1] = '-'    
+                            candi[i-1] = '-'
+                return candi
                 
             
             print("Tidak ada candi dengan ID tersebut.")
+            return candi
                 
         else : 
             print("Candi tidak jadi dihancurkan")
@@ -545,24 +560,23 @@ def hancurkancandi():
         
 #F12
 def ayamberkokok ():
-    global candi
-    if hitung_candi(candi) < 100 :
+    if hitung_candi() <= 100 :
         print("Kukuruyuk.. Kukuruyuk..")
-        print("Jumlah Candi: ", hitung_candi(candi))
+        print("Jumlah Candi: ", hitung_candi())
         print("Selamat, Roro Jonggrang memenangkan permainan!")
         print("*Bandung Bondowoso angry noise*")
         print("Roro Jonggrang dikutuk menjadi candi.")
         exit()
     else :
         print("Kukuruyuk.. Kukuruyuk..")
-        print("Jumlah Candi: ", hitung_candi(candi))
+        print("Jumlah Candi: ", hitung_candi())
         print("Yah, Bandung Bondowoso memenangkan permainan!")
         exit()
 #F13
 
 #f14
 def save():
-    global role
+    global user
     global bahan_bangunan
     global candi
     folder = str(input("Masukkan nama folder :"))
@@ -588,9 +602,9 @@ def save():
         os.mkdir(path) # membuat folder
 
     # menyimpan data array ke csv 
-    tools.write_csv_user(f"{folder}/user.csv",role)
-    tools.write_csv_bahan_bangunan(f"{folder}/bahan_bangunan.csv",bahan_bangunan)
-    tools.write_csv_candi(f"{folder}/candi.csv",candi)
+    tools.write_csv_user(f"{path}/user.csv",user)
+    tools.write_csv_bahan_bangunan(f"{path}/bahan_bangunan.csv",bahan_bangunan)
+    tools.write_csv_candi(f"{path}/candi.csv",candi)
     print(f"Berhasil menyimpan data di folder {path}")
 
 #F15
@@ -639,14 +653,23 @@ def exit():
 
 def hitung_candi ():
     global candi
-    count_candi = 0 
+    count_candi = -1
     i = 0
-    while True :
+    for i in range(101):
         if candi[i] != "-" :
             count_candi += 1 
+    return count_candi
+    
+def hitung_user ():
+    global user
+    count_user = -1
+    i = 0
+    while True :
+        if user[i] != "-" :
+            count_user += 1 
             i += 1
         else :
-            return count_candi
+            return count_user
 
 def cek():
     print(user)
@@ -654,7 +677,8 @@ def cek():
     print(candi)
     print(username)
     print(role)
-    print(f"panjang arr_candi{hitung_candi()}")
+    print(f"banyak user {hitung_user()}")
+    print(f"banyak candi {hitung_candi()}")
     
 
 def run(fungsi):
@@ -662,14 +686,14 @@ def run(fungsi):
         login()
     if fungsi == "logout":
         logout()
-    # if fungsi == "summonjin":
-    #     summonjin()
+    if fungsi == "summonjin":
+        summonjin()
     if fungsi == "bangun":
         bangun ()
     if fungsi == "kumpul":
         kumpul ()
-    # if fungsi == "ubahjin":
-    #     ubahjin()
+    if fungsi == "ubahjin":
+        ubahjin()
     if fungsi == "batchkumpul":
         batchkumpul ()
     if fungsi == "batchbangun":

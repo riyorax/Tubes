@@ -93,14 +93,24 @@ def write_csv_user(file,array):
         if array[i] != "-":
             count+=1
     f = open(file, 'w')
-    for i in range(count+1):
+    for i in range(count):
         f.write(array_to_line_1(array[i][0],array[i][1],array[i][2]))
     f.close()
     
 def write_csv_bahan_bangunan(file,array):
     f = open(file, 'w')
     for i in range(4):
-        f.write(array_to_line_1(array[i][1],array[i][2],array[i][3]))
+        f.write(array_to_line_1(array[i][0],array[i][1],array[i][2]))
+    f.close()
+
+def write_csv_candi(file,array):
+    count = 0
+    for i in range(101):
+        if array[i] != "-":
+            count+=1
+    f = open(file, 'w')
+    for i in range(count):
+        f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
     f.close()
 
 def id_candi(array):
@@ -140,28 +150,8 @@ def to_array_candi(file,array,id,pembuat,pasir,batu,air):
     array[count] = [str(id),str(pembuat),str(pasir),str(batu),str(air)]
 
 def write_array_candi(array,id,pembuat,pasir,batu,air):
-    count = 0
+    count = -1
     for i in range(101):
         if array[i] != "-":
             count+=1
     array[count] = [str(id),str(pembuat),str(pasir),str(batu),str(air)]
-
-def write_csv_candi(file,array):
-    count = 0
-    for i in range(101):
-        if array[i] != "-":
-            count+=1
-    f = open(file, 'w')
-    for i in range(count+1):
-        f.write(array_to_line_2(array[i][0],array[i][1],array[i][2],array[i][3],array[i][4]))
-    f.close()
-
-[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'asep3', '1', '2', '1'], ['2', 'asep2', '2', '4', '1'], '-', '-', '-', '-',]
-[['id', 'pembuat', 'pasir', 'batu', 'air'], ['1', 'asep3', '1', '2', '1'], ['2', 'asep2', '2', '4', '1'],"-", ["","",""], ["","",""], '-',]
-1
-2
-3
-4
-5
-["","",""]
-"-"

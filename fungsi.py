@@ -260,7 +260,7 @@ def batchkumpul():
     global bahan_bangunan
     global candi
     if role == "bandung_bondowoso":
-        count = hitung_jin_pengumpul
+        count = hitung_jin_pengumpul()
         pasir = 0
         batu = 0
         air = 0
